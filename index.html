@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Анны Большаковой</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf9f6;
+            color: #2d2d2d;
+        }
+
+        /* --- ШАПКА ПОРТФОЛИО --- */
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f2eb 100%);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #c9b7a2;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #3d352e;
+            margin-bottom: 5px;
+        }
+
+        .header-sub {
+            font-size: 1.3rem;
+            color: #6b5f54;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .header-info {
+            margin-top: 10px;
+            color: #8a7e73;
+            font-size: 1rem;
+        }
+
+        /* --- НАВИГАЦИЯ (ЯКОРЯ) --- */
+        nav {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e0d8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-container a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-container a:hover {
+            background: #e8ddd2;
+            color: #3d352e;
+        }
+
+        /* --- ОСНОВНОЙ КОНТЕНТ --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .section-block {
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #3d352e;
+            border-left: 6px solid #b99d87;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: #555;
+            background: #f4f1eb;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            transition: 0.3s;
+            border: 1px solid #f0ebe3;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2c241e;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 5px;
+            color: #8b6f5b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .card a:hover {
+            border-bottom-color: #8b6f5b;
+        }
+
+        /* --- БЛОК "ОСТАЛЬНОЕ" (Календарь + Памятки) --- */
+        .remaining-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .reminder-box {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid #f0ebe3;
+        }
+
+        .reminder-box h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+
+        .calendar-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+        }
+
+        .badge-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .badge-list li {
+            background: #f4f1eb;
+            margin: 8px 0;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* --- АДАПТИВ --- */
+        @media (max-width: 768px) {
+            .header-title { font-size: 2rem; }
+            .remaining-layout { grid-template-columns: 1fr; }
+            .nav-container { gap: 15px; }
+            .nav-container a { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ШАПКА ПОРТФОЛИО -->
+    <header>
+        <div class="header-container">
+            <!-- ЗАМЕНИТЕ 'your-photo.jpg' на название вашего файла с фото -->
+            <img src="nano_nb2_1779216124007_1.png" alt="Фото Анны Большаковой" class="avatar">
+            <h1 class="header-title">Анна Большакова</h1>
+            <p class="header-sub">Студентка 2 курса</p>
+            <p class="header-info">Ростовский педагогический колледж</p>
+        </div>
+    </header>
+
+    <!-- МЕНЮ НАВИГАЦИИ -->
+    <nav>
+        <div class="nav-container">
+            <a href="#colleagues">Коллегам</a>
+            <a href="#parents">Родителям</a>
+            <a href="#students">Обучающимся</a>
+            <a href="#remaining">Памятки / Календарь</a>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЕ СОДЕРЖИМОЕ -->
+    <div class="container">
+
+        <!-- БЛОК: КОЛЛЕГАМ -->
+        <section id="colleagues" class="section-block">
+            <h2 class="section-title">👩‍🏫 Коллегам</h2>
+            <div class="section-desc">
+                Здравствуйте, уважаемые коллеги! В этом разделе вы сможете увидеть мои работы.
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📄 ФГОС (Федеральные программы)</h3>
+                    <p>Основные документы и стандарты.</p>
+                    <a href="#">Ссылка на ФГОС НОО</a>
+                </div>
+                <div class="card">
+                    <h3>📚 Мои методические работы</h3>
+                    <p>Презентации, конспекты уроков, разработки.</p>
+                    <a href="#">Смотреть работы</a>
+                </div>
+                <div class="card">
+                    <h3>🧑‍🏫 Полезное коллегам</h3>
+                    <p>Рекомендации и материалы для начальной школы.</p>
+                    <a href="#">Перейти к материалам</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК: РОДИТЕЛЯМ -->
+        <section id="parents" class="section-block">
+            <h2 class="section-title">❤️ Родителям</h2>
+            <div class="section-desc">
+                Здравствуйте, уважаемые родители! В этом разделе вы сможете увидеть полезные сайты для работы с детьми дома.
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📖 РЭШ (Российская электронная школа)</h3>
+                    <p>Видеоуроки, упражнения, тесты по всем предметам.</p>
+                    <a href="https://resh.edu.ru" target="_blank">Перейти на РЭШ</a>
+                </div>
+                <div class="card">
+                    <h3>📕 Учи.ру</h3>
+                    <p>Интерактивные задания, олимпиады и игры для детей.</p>
+                    <a href="https://uchi.ru" target="_blank">Перейти на Учи.ру</a>
+                </div>
+                <div class="card">
+                    <h3>🎯 ЯКласс</h3>
+                    <p>Тренировки и проверочные работы по школьной программе.</p>
+                    <a href="https://yaklass.ru" target="_blank">Перейти на ЯКласс</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК: ОБУЧАЮЩИМСЯ -->
+        <section id="students" class="section-block">
+            <h2 class="section-title">🧒 Обучающимся</h2>
+            <div class="section-desc">
+                Здравствуйте, уважаемые ученики! В этом разделе вы сможете увидеть полезные для вас сайты и расписание.
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📅 Расписание звонков</h3>
+                    <p>1 урок: 8:30 – 9:10<br>2 урок: 9:20 – 10:00<br>3 урок: 10:20 – 11:00</p>
+                </div>
+                <div class="card">
+                    <h3>📚 Расписание уроков на неделю</h3>
+                    <p>Пн: Математика, Русский, Физ-ра<br>Вт: Окружающий, Литература, Рисование</p>
+                </div>
+                <div class="card">
+                    <h3>🌐 Сайты для учебы</h3>
+                    <a href="https://resh.edu.ru" target="_blank">РЭШ</a><br>
+                    <a href="https://uchi.ru" target="_blank">Учи.ру</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК: ОСТАЛЬНОЕ (Памятки + Календарь) -->
+        <section id="remaining" class="section-block">
+            <h2 class="section-title">📌 Памятки, ПДД, Календарь</h2>
+            <div class="remaining-layout">
+                <!-- Памятки по здоровью и ПДД (левая часть) -->
+                <div class="reminder-box">
+                    <h3>🩺 Памятки по здоровью и ПДД</h3>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                        <!-- ЗАМЕНИТЕ 'health1.jpg', 'pdd.jpg' на названия ваших фото -->
+                        <img src="health1.jpg" alt="Памятка здоровье" style="width: 100%; max-width: 200px; border-radius: 10px; border: 1px solid #ddd;">
+                        <img src="pdd.jpg" alt="ПДД памятка" style="width: 100%; max-width: 200px; border-radius: 10px; border: 1px solid #ddd;">
+                    </div>
+                    <ul class="badge-list">
+                        <li>✅ Чистота — залог здоровья</li>
+                        <li>✅ Светофор и переход</li>
+                        <li>✅ Дорожные знаки для детей</li>
+                    </ul>
+                </div>
+
+                <!-- Календарь (правая часть) -->
+                <div class="reminder-box">
+                    <h3>🗓️ Тематический календарь</h3>
+                    <p style="margin-bottom: 10px;">Важные даты, праздники и события</p>
+                    <!-- ЗАМЕНИТЕ 'calendar.jpg' на картинку календаря -->
+                    <img src="calendar.jpg" alt="Календарь праздников" class="calendar-img">
+                    <ul class="badge-list">
+                        <li>🎉 1 сентября — День знаний</li>
+                        <li>🍂 Сентябрь: Осенний марафон</li>
+                        <li>🎄 Декабрь: Новогодний утренник</li>
+                        <li>🌍 Октябрь: День учителя, День матери</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ПОДВАЛ (необязательно) -->
+    <footer style="text-align: center; padding: 30px; color: #888; border-top: 1px solid #eee; margin-top: 30px;">
+        © Анна Большакова, РПК
+    </footer>
+
+</body>
+</html>
